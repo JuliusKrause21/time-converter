@@ -1,6 +1,6 @@
 {
   "name": "@jk21/time-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library to easily convert unix time, utc and gnss time into one another.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
