@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/JuliusKrause21/gnss-time-converter/compare/v1.0.3...v1.0.4) (2024-06-15)
+
+
+### Bug Fixes
+
+* extend tests to cover cases where leap seconds are not used ([e4f41b4](https://github.com/JuliusKrause21/gnss-time-converter/commit/e4f41b4e687998267c25162be168a36d6d16e80c))
+
 ## 1.0.3 (2024-06-14)
 
 
