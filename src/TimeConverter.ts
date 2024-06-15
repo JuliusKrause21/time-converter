@@ -112,7 +112,6 @@ export const addedLeapSeconds = [
   }
 ];
 
-// TODO: Test without the use of leap seconds
 export class TimeConverter {
   private useLeapSeconds: boolean;
 
