@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.5](https://github.com/JuliusKrause21/gnss-time-converter/compare/v1.0.4...v1.0.5) (2024-06-24)
+
+
+### Bug Fixes
+
+* package vulnerabilities ([ac07aac](https://github.com/JuliusKrause21/gnss-time-converter/commit/ac07aac2af7f1dc415397d5743e3ab43fe731b6f))
+
 ## [1.0.4](https://github.com/JuliusKrause21/gnss-time-converter/compare/v1.0.3...v1.0.4) (2024-06-15)
 
 
