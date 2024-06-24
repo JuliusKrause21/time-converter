@@ -1,4 +1,4 @@
-# gnns-time-converter
+# time-converter
 
 ## Time Formats
 When working with satellite navigation systems different representations of time need to be converted into one another. Most of the conversions need to be done between the three following representations.
@@ -15,11 +15,11 @@ At that time the GNSS time was in sync with the Coordinated Universal Time (UTC)
 
 ## How to use the library
 ### Installation:
-> npm i @jk21/gnss-time-converter
+> npm i @jk21/time-converter
 
 ### Usage:
 ```javascript
-import { TimeConverter } from '@jk21/gnns-time-converter';
+import { TimeConverter } from '@jk21/time-converter';
 
 const timeConverter = new TimeConverter();
 ```
