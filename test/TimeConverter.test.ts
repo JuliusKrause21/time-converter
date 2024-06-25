@@ -129,7 +129,7 @@ describe('TimeConverter', () => {
           unixTime: initialUnixTime,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1971
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(initialUnixTime);
@@ -145,7 +145,7 @@ describe('TimeConverter', () => {
           unixTime,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1981
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(unixTime);
@@ -173,7 +173,7 @@ describe('TimeConverter', () => {
           unixTime: unixAtGpsZero,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1981
         };
 
         const timeConversionResult = timeConverter.convertGnssTime(initialGnssTime);
@@ -191,7 +191,7 @@ describe('TimeConverter', () => {
           unixTime: undefined,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1961
         };
 
         const timeConversionResult = timeConverter.convertUtc(utc);
@@ -423,7 +423,7 @@ describe('TimeConverter', () => {
           unixTime: initialUnixTime,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1971
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(initialUnixTime);
@@ -439,7 +439,7 @@ describe('TimeConverter', () => {
           unixTime,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1981
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(unixTime);
@@ -467,7 +467,7 @@ describe('TimeConverter', () => {
           unixTime: unixAtGpsZero,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1981
         };
 
         const timeConversionResult = timeConverter.convertGnssTime(initialGnssTime);
@@ -485,7 +485,7 @@ describe('TimeConverter', () => {
           unixTime: undefined,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1961
         };
 
         const timeConversionResult = timeConverter.convertUtc(utc);
