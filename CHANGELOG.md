@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.6](https://github.com/JuliusKrause21/time-converter/compare/v1.0.5...v1.0.6) (2024-06-25)
+
+
+### Bug Fixes
+
+* correct logic to calculate leap year and extend tests ([c0ccfe6](https://github.com/JuliusKrause21/time-converter/commit/c0ccfe67d9ee25a38f3b615c01fdcc911d06a4d6))
+* remove conditional function call and always calculate the next leap year ([bc7dad0](https://github.com/JuliusKrause21/time-converter/commit/bc7dad08ead61ee8dfe095f10a237f07fee0da69))
+
 ## [1.0.5](https://github.com/JuliusKrause21/gnss-time-converter/compare/v1.0.4...v1.0.5) (2024-06-24)
 
 
