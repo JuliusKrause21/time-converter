@@ -241,7 +241,7 @@ export class TimeConverter {
   }
 
   private isLeapYear(year: number): boolean {
-    return (year % 4 === 0 && year % 400 === 0) || year % 100 !== 0;
+    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0
   }
 
   private nextLeapYear(year: number): number {
