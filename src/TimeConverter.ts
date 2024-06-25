@@ -134,7 +134,7 @@ export class TimeConverter {
       leapYear,
       gnssTime: this.convertUnixToGnssTime(unixTime),
       leapSeconds: this.useLeapSeconds ? this.getLeapSecondsToAdd(unixTime) : undefined,
-      nextLeapYear: leapYear ? undefined : this.nextLeapYear(year)
+      nextLeapYear: this.nextLeapYear(year)
     };
   }
 
@@ -150,7 +150,7 @@ export class TimeConverter {
       gnssTime,
       unixTime,
       leapSeconds: this.useLeapSeconds ? this.getLeapSecondsToSubtract(unixTime) : undefined,
-      nextLeapYear: leapYear ? undefined : this.nextLeapYear(year)
+      nextLeapYear:  this.nextLeapYear(year)
     };
   }
 
@@ -170,7 +170,7 @@ export class TimeConverter {
       unixTime,
       gnssTime: this.convertUtcToGnssTime(utc),
       leapSeconds,
-      nextLeapYear: leapYear ? undefined : this.nextLeapYear(year)
+      nextLeapYear: this.nextLeapYear(year)
     };
   }
 
@@ -241,14 +241,15 @@ export class TimeConverter {
   }
 
   private isLeapYear(year: number): boolean {
-    return (year % 4 == 0 && year % 400 == 0) || year % 100 !== 0;
+    return year % 100 === 0 ? year % 400 === 0 : year % 4 === 0
   }
 
   private nextLeapYear(year: number): number {
-    while (!this.isLeapYear(year)) {
-      year++;
+    let nextYear = year +1;
+    while (!this.isLeapYear(nextYear)) {
+      nextYear++;
     }
-    return year;
+    return nextYear;
   }
 
   private weekToSeconds(week: number): number {

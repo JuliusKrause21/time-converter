@@ -128,8 +128,8 @@ describe('TimeConverter', () => {
           utc: new Date('1970-01-01T00:00:00.000Z'),
           unixTime: initialUnixTime,
           leapSeconds: 0,
-          leapYear: true,
-          nextLeapYear: undefined
+          leapYear: false,
+          nextLeapYear: 1972
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(initialUnixTime);
@@ -145,7 +145,7 @@ describe('TimeConverter', () => {
           unixTime,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1984
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(unixTime);
@@ -173,7 +173,7 @@ describe('TimeConverter', () => {
           unixTime: unixAtGpsZero,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1984
         };
 
         const timeConversionResult = timeConverter.convertGnssTime(initialGnssTime);
@@ -191,12 +191,33 @@ describe('TimeConverter', () => {
           unixTime: undefined,
           leapSeconds: 0,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1964
         };
 
         const timeConversionResult = timeConverter.convertUtc(utc);
 
         expect(timeConversionResult).toStrictEqual(expectedTimeConversionResult);
+      });
+
+      it('should correctly determine that the current year is not a leap year and the next occurring one', () => {
+        const utc = new Date('1899-01-01T00:00:00.000Z');
+        const timeConversionResult = timeConverter.convertUtc(utc);
+
+        expect(timeConversionResult).toMatchObject({leapYear: false, nextLeapYear: 1904});
+      })
+
+      it('should correctly determine that the current year is a leap year and the next occurring one', () => {
+        const utc = new Date('1960-01-01T00:00:00.000Z');
+        const timeConversionResult = timeConverter.convertUtc(utc);
+
+        expect(timeConversionResult).toMatchObject({leapYear: true, nextLeapYear: 1964});
+      });
+
+      it('should correctly determine that the current year is not a leap year and the next occurring one is special', () => {
+        const utc = new Date('1998-01-01T00:00:00.000Z');
+        const timeConversionResult = timeConverter.convertUtc(utc);
+
+        expect(timeConversionResult).toMatchObject({leapYear: false, nextLeapYear: 2000});
       });
     });
 
@@ -422,8 +443,8 @@ describe('TimeConverter', () => {
           utc: new Date('1970-01-01T00:00:00.000Z'),
           unixTime: initialUnixTime,
           leapSeconds: undefined,
-          leapYear: true,
-          nextLeapYear: undefined
+          leapYear: false,
+          nextLeapYear: 1972
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(initialUnixTime);
@@ -439,7 +460,7 @@ describe('TimeConverter', () => {
           unixTime,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1984
         };
 
         const timeConversionResult = timeConverter.convertUnixTime(unixTime);
@@ -467,7 +488,7 @@ describe('TimeConverter', () => {
           unixTime: unixAtGpsZero,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1984
         };
 
         const timeConversionResult = timeConverter.convertGnssTime(initialGnssTime);
@@ -485,7 +506,7 @@ describe('TimeConverter', () => {
           unixTime: undefined,
           leapSeconds: undefined,
           leapYear: true,
-          nextLeapYear: undefined
+          nextLeapYear: 1964
         };
 
         const timeConversionResult = timeConverter.convertUtc(utc);
