@@ -9,7 +9,7 @@ export interface TimeConversionResult {
   gnssTime: GnssTime | undefined;
   unixTime: number | undefined;
   leapSeconds: number | undefined;
-  nextLeapYear: number | undefined;
+  nextLeapYear: number;
 }
 
 export const unixAtGpsZero = 315964800;
