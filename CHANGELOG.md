@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.0.0](https://github.com/JuliusKrause21/time-converter/compare/v1.0.6...v2.0.0) (2024-06-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* `nextLeapYear` can not be undefined anymore
+
+### Features
+
+* export relevant constants with time converter class ([79ffbe8](https://github.com/JuliusKrause21/time-converter/commit/79ffbe883ba8d3fc6cbbd476cd4f89c8b501ee15))
+
 ## [1.0.6](https://github.com/JuliusKrause21/time-converter/compare/v1.0.5...v1.0.6) (2024-06-25)
 
 
