@@ -1,4 +1,4 @@
-import {maxTimeOfWeek, TimeConverter, unixAtGpsZero} from "../src/TimeConverter";
+import { maxTimeOfWeek, TimeConverter, unixAtGpsZero } from "../src";
 
 
 describe('TimeConverter', () => {

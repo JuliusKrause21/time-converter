@@ -1,1 +1,1 @@
-export {TimeConverter} from './TimeConverter';
+export {TimeConverter, maxTimeOfWeek, unixAtGpsZero} from './TimeConverter';
